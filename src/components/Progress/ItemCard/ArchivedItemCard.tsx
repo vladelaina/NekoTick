@@ -61,27 +61,22 @@ export function ArchivedItemCard({ item, onClick, onAutoArchive, onDelete, previ
                   <span className="text-xl font-medium text-zinc-900 dark:text-zinc-100 truncate tracking-wide group-hover:text-black dark:group-hover:text-white transition-colors">
                     {displayTitle}
                   </span>
-                  <div className="flex items-center gap-3 text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-500 dark:group-hover:text-zinc-500 transition-colors">
-                    <span>Target</span>
-                    <span className="text-zinc-600 dark:text-zinc-400">
-                      {item.type === 'progress' ? `${item.current}/${item.total}` : item.current}
-                    </span>
-                  </div>
                 </div>
             </div>
          </div>
 
          {/* Zone 2: The Timeline Journey */}
-         <div className="flex flex-col justify-center gap-3 w-full max-w-md justify-self-end">
-            {/* Labels */}
-            <div className="flex justify-between text-[9px] font-bold tracking-[0.2em] text-zinc-300 dark:text-zinc-700 uppercase px-1 opacity-60">
-               <span>Started</span>
-               <span>Ended</span>
+         <div className="flex flex-col justify-center gap-1 w-full max-w-md justify-self-end">
+            {/* Top: The Result (Precise Reading) */}
+            <div className="text-center mb-0.5">
+               <span className="text-xs font-medium tabular-nums text-zinc-400 dark:text-zinc-500">
+                  {item.type === 'progress' ? `${item.current}/${item.total}` : `${item.current} ${item.unit}`}
+               </span>
             </div>
 
-            {/* Visual Timeline */}
-            <div className="flex items-center gap-6 text-zinc-400 dark:text-zinc-500">
-               <span className="text-xs font-medium tabular-nums tracking-wider opacity-80">
+            {/* Middle: Visual Timeline */}
+            <div className="flex items-center gap-4 text-zinc-400 dark:text-zinc-500">
+               <span className="text-[10px] font-medium tabular-nums tracking-wider opacity-60 w-16 text-right">
                   {formatDate(startDate)}
                </span>
                
@@ -90,13 +85,14 @@ export function ArchivedItemCard({ item, onClick, onAutoArchive, onDelete, previ
                   <div className="absolute inset-0 bg-gradient-to-r from-zinc-200 via-zinc-400 to-zinc-200 dark:from-zinc-800 dark:via-zinc-600 dark:to-zinc-800 opacity-50" />
                </div>
 
-               <span className="text-xs font-medium tabular-nums tracking-wider text-zinc-900 dark:text-zinc-100">
+               <span className="text-[10px] font-medium tabular-nums tracking-wider text-zinc-900 dark:text-zinc-100 w-16 text-left">
                   {formatDate(endDate)}
                </span>
             </div>
             
+            {/* Bottom: Duration */}
             <div className="text-center">
-               <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-zinc-300 dark:text-zinc-700">
+               <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-zinc-300 dark:text-zinc-700">
                   {durationDays} Days Journey
                </span>
             </div>
