@@ -1,0 +1,52 @@
+/* -- Theme tokens --------------------------------------------------------- */
+:root {
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 14px;
+  font-synthesis: none;
+  --blue: #54aeff;
+  --blue-strong: #278ee9;
+  --blue-soft: #eaf5ff;
+  --pink: #f77daa;
+  --pink-strong: #eb6196;
+  --pink-soft: #fff0f6;
+  --bg: #eef3f8;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --field: #f5f8fc;
+  --hover: #f3f7fb;
+  --text: #182230;
+  --text-soft: #657184;
+  --text-faint: #98a2b1;
+  --border: #e5eaf1;
+  --border-strong: #d7dfe9;
+  --shadow: 0 14px 40px rgba(35, 53, 76, .08), 0 3px 10px rgba(84, 174, 255, .08);
+  --shadow-float: 0 18px 48px rgba(24, 34, 48, .16), 0 5px 18px rgba(84, 174, 255, .11);
+  --danger: #ef526c;
+  --warning: #f2a447;
+  --success: #35b988;
+  --sidebar-width: 224px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --blue: #67b7ff;
+  --blue-strong: #83c4ff;
+  --blue-soft: rgba(103, 183, 255, .13);
+  --pink: #ff86b3;
+  --pink-strong: #ff9dc1;
+  --pink-soft: rgba(255, 134, 179, .12);
+  --bg: #101214;
+  --surface: #17191c;
+  --surface-raised: #1d2024;
+  --field: #202328;
+  --hover: #22262b;
+  --text: #f2f4f7;
+  --text-soft: #a0a8b5;
+  --text-faint: #707986;
+  --border: #292d33;
+  --border-strong: #343a42;
+  --shadow: 0 18px 46px rgba(0, 0, 0, .32);
+  --shadow-float: 0 22px 56px rgba(0, 0, 0, .48);
+}
+

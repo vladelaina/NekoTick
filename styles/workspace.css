@@ -1,0 +1,17 @@
+/* -- Workspace and shared controls --------------------------------------- */
+.view-scroll { min-height: 0; flex: 1; overflow: auto; }
+.view-container { width: min(1180px, 100%); min-height: 100%; margin: 0 auto; padding: 28px 32px 44px; }
+.view-header { min-height: 53px; margin-bottom: 22px; display: flex; align-items: flex-start; gap: 16px; }
+.view-heading { min-width: 0; flex: 1; }
+.view-heading h1 { margin: 0; font-size: 24px; line-height: 31px; font-weight: 760; letter-spacing: 0; }
+.view-heading p { margin: 4px 0 0; color: var(--text-soft); font-size: 13px; }
+.header-actions { min-height: 38px; display: flex; align-items: center; gap: 8px; }
+.primary-button, .secondary-button, .text-button { min-height: 36px; padding: 0 14px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; border-radius: 8px; font-weight: 680; transition: transform .16s ease, color .16s ease, border-color .16s ease, background .16s ease; }
+.primary-button { background: var(--blue); color: #fff; box-shadow: 0 4px 12px rgba(84, 174, 255, .22); }
+.primary-button:hover { background: var(--blue-strong); transform: translateY(-1px); }
+.secondary-button { border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-soft); }
+.secondary-button:hover { border-color: var(--blue); background: var(--blue-soft); color: var(--blue-strong); }
+.text-button { padding-inline: 9px; background: transparent; color: var(--blue-strong); }
+.text-button:hover { background: var(--blue-soft); }
+.primary-button .icon, .secondary-button .icon, .text-button .icon { width: 16px; height: 16px; }
+

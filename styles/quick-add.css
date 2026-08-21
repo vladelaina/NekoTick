@@ -1,0 +1,98 @@
+/* -- Quick add composer -------------------------------------------------- */
+.quick-add { width: 100%; margin-bottom: 14px; overflow: hidden; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--surface); transition: border-color .16s ease, box-shadow .16s ease; }
+.quick-add[data-quadrant="q1"] { border-color: var(--pink); box-shadow: 0 0 0 3px rgba(247, 125, 170, .14), 0 8px 24px rgba(247, 125, 170, .1); }
+.quick-add[data-quadrant="q2"] { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(84, 174, 255, .14), 0 8px 24px rgba(84, 174, 255, .1); }
+.quick-add[data-quadrant="q3"] { border-color: var(--warning); box-shadow: 0 0 0 3px rgba(242, 164, 71, .14), 0 8px 24px rgba(242, 164, 71, .1); }
+.quick-add[data-quadrant="q4"] { border-color: var(--text-faint); box-shadow: 0 0 0 3px rgba(152, 162, 177, .14), 0 8px 24px rgba(101, 113, 132, .09); }
+.quick-add-main { min-height: 44px; padding: 5px 5px 5px 13px; display: flex; align-items: flex-start; gap: 9px; }
+.quick-add-main > .icon { width: 16px; height: 16px; margin-top: 9px; flex: 0 0 auto; color: var(--text-faint); }
+.quick-add-input { min-width: 0; min-height: 34px; max-height: 96px; padding: 7px 0; flex: 1; overflow-y: auto; resize: none; border: 0; background: transparent; color: var(--text); font: inherit; line-height: 20px; }
+.quick-add-input::placeholder { color: var(--text-faint); }
+.quick-add[data-quadrant="q1"] .quick-add-input { color: var(--pink-strong); }
+.quick-add[data-quadrant="q2"] .quick-add-input { color: var(--blue-strong); }
+.quick-add[data-quadrant="q3"] .quick-add-input { color: var(--warning); }
+.quick-add[data-quadrant="q4"] .quick-add-input { color: var(--text-soft); }
+.quick-add-submit { width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 7px; background: var(--blue); color: #fff; transition: background .16s ease, transform .16s ease; }
+.quick-add-submit:hover { background: var(--blue-strong); transform: translateY(-1px); }
+.quick-add-submit .icon { width: 16px; height: 16px; }
+.quick-add-options { padding: 7px; display: grid; grid-template-columns: 140px 115px 130px minmax(140px, 1fr); gap: 6px; border-top: 1px solid var(--border); background: var(--field); }
+.quick-add-option { min-width: 0; height: 32px; padding: 0 8px; display: flex; align-items: center; gap: 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text-soft); }
+.quick-add-option:focus-within { border-color: var(--blue); color: var(--blue-strong); }
+.quick-add-option > .icon { width: 13px; height: 13px; flex: 0 0 auto; color: var(--text-faint); }
+.quick-add-option input, .quick-add-option select, .quick-add-option textarea { min-width: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: var(--text-soft); font-size: 10px; }
+.quick-add-option select { cursor: pointer; }
+.category-manage-button { min-width: 24px; min-height: 24px; padding: 0 5px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; flex: 0 0 auto; border-radius: 5px; background: transparent; color: var(--text-faint); font-size: 10px; }
+.category-manage-button:hover { background: var(--blue-soft); color: var(--blue-strong); }
+.category-manage-button .icon { width: 12px; height: 12px; }
+.quick-add-option input::placeholder, .quick-add-option textarea::placeholder { color: var(--text-faint); }
+.quick-add-quadrants { height: 34px; margin: 0; padding: 0; display: flex; align-items: center; justify-content: flex-start; flex: 0 0 auto; gap: 5px; border: 0; background: transparent; }
+.quick-quadrant-choice { position: relative; width: 24px; height: 30px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; cursor: pointer; }
+.quick-quadrant-choice input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.quick-quadrant-dot { width: 10px; height: 10px; flex: 0 0 auto; border-radius: 50%; transition: box-shadow .16s ease, transform .16s ease; }
+.quick-quadrant-dot.q1 { background: var(--pink); }
+.quick-quadrant-dot.q2 { background: var(--blue); }
+.quick-quadrant-dot.q3 { background: var(--warning); }
+.quick-quadrant-dot.q4 { background: var(--text-faint); }
+.quick-quadrant-choice:hover .quick-quadrant-dot { transform: scale(1.24); }
+.quick-quadrant-choice input:checked + .quick-quadrant-dot { transform: scale(1.16); box-shadow: 0 0 0 5px color-mix(in srgb, currentColor 15%, transparent), 0 0 12px currentColor; }
+.quick-quadrant-choice.q1 { color: var(--pink); }
+.quick-quadrant-choice.q2 { color: var(--blue); }
+.quick-quadrant-choice.q3 { color: var(--warning); }
+.quick-quadrant-choice.q4 { color: var(--text-faint); }
+.quick-quadrant-choice input:focus-visible + .quick-quadrant-dot { outline: 2px solid currentColor; outline-offset: 4px; }
+.quick-add-notes { height: auto; min-height: 32px; align-items: flex-start; padding-top: 8px; }
+.quick-add-notes textarea { min-height: 20px; max-height: 120px; line-height: 1.5; resize: vertical; }
+.toolbar { min-height: 40px; margin-bottom: 12px; display: flex; align-items: center; gap: 9px; }
+.segmented { display: inline-flex; height: 36px; padding: 3px; border-radius: 8px; background: var(--field); }
+.segment { min-width: 54px; padding: 0 12px; border-radius: 6px; background: transparent; color: var(--text-soft); font-size: 12px; font-weight: 650; white-space: nowrap; }
+.segment:hover { color: var(--text); }
+.segment.active { background: var(--surface); color: var(--pink-strong); box-shadow: 0 1px 5px rgba(24, 34, 48, .09); }
+.toolbar-spacer { flex: 1; }
+.sort-menu { position: relative; z-index: 12; flex: 0 0 auto; min-width: 148px; }
+.sort-menu-trigger { width: 100%; height: 36px; padding: 0 10px 0 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); color: var(--text-soft); font-size: 12px; white-space: nowrap; transition: border-color .16s ease, box-shadow .16s ease, color .16s ease; }
+.sort-menu-trigger:hover, .sort-menu.open .sort-menu-trigger { border-color: var(--blue); color: var(--text); box-shadow: 0 0 0 3px rgba(84, 174, 255, .1); }
+.sort-menu-trigger .icon { width: 15px; height: 15px; color: var(--text-faint); transition: transform .18s ease, color .16s ease; }
+.sort-menu.open .sort-menu-trigger .icon { color: var(--blue); transform: rotate(180deg); }
+.sort-menu-options { position: absolute; top: calc(100% + 6px); right: 0; left: 0; max-height: 190px; padding: 6px; overflow: auto; border: 1px solid var(--border); border-radius: 11px; background: var(--surface-raised); box-shadow: 0 12px 32px rgba(24, 34, 48, .16), 0 3px 10px rgba(84, 174, 255, .1); animation: dropdown-in .16s ease; }
+.sort-menu-option { width: 100%; min-height: 34px; padding: 0 10px; display: flex; align-items: center; border-radius: 7px; background: transparent; color: var(--text-soft); font-size: 12px; text-align: left; white-space: nowrap; }
+.sort-menu-option:hover { background: var(--hover); color: var(--text); }
+.sort-menu-option.selected { background: var(--blue-soft); color: var(--blue-strong); font-weight: 700; }
+.calendar-view-toolbar { min-height: 46px; margin: -6px 0 16px; display: flex; align-items: center; gap: 12px; }
+.calendar-mode-switch .segment { min-width: 70px; }
+
+.count-filter-note { min-height: 34px; margin: -8px 0 14px; padding: 7px 11px; border-left: 3px solid var(--blue); border-radius: 0 7px 7px 0; background: var(--blue-soft); color: var(--blue-strong); font-size: 11px; }
+.count-overview { margin-bottom: 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.count-card { min-width: 0; min-height: 105px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.count-card-icon { width: 36px; height: 36px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 8px; }
+.count-card-icon.blue { background: var(--blue-soft); color: var(--blue-strong); }
+.count-card-icon.pink { background: var(--pink-soft); color: var(--pink-strong); }
+.count-card-icon.green { background: color-mix(in srgb, var(--success) 12%, transparent); color: var(--success); }
+.count-card-icon.danger { background: color-mix(in srgb, var(--danger) 11%, transparent); color: var(--danger); }
+.count-card-copy { min-width: 0; flex: 1; }
+.count-card-copy span, .count-card-copy small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.count-card-copy span { color: var(--text-soft); font-size: 11px; font-weight: 700; }
+.count-card-copy strong { display: block; margin: 1px 0; font-size: 24px; line-height: 28px; }
+.count-card-copy small { color: var(--text-faint); font-size: 9px; }
+.count-detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.count-panel { min-width: 0; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+.count-panel-header { min-height: 57px; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--border); }
+.count-panel-header div { min-width: 0; }
+.count-panel-header strong, .count-panel-header div span { display: block; }
+.count-panel-header strong { font-size: 12px; }
+.count-panel-header div span { color: var(--text-faint); font-size: 9px; }
+.count-panel-header > span { color: var(--text-faint); font-size: 10px; white-space: nowrap; }
+.count-rows { padding: 7px 15px 13px; }
+.count-row { padding: 7px 0; }
+.count-row-label { margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--text-soft); font-size: 10px; }
+.count-row-label strong { color: var(--text); font-size: 11px; }
+.count-bar { height: 5px; overflow: hidden; border-radius: 5px; background: var(--field); }
+.count-bar span { min-width: 0; height: 100%; display: block; border-radius: inherit; transition: width .35s ease; }
+.count-bar span.blue { background: var(--blue); }
+.count-bar span.pink { background: var(--pink); }
+.count-bar span.green { background: var(--success); }
+.count-bar span.danger { background: var(--danger); }
+.count-bar span.warning { background: var(--warning); }
+.count-bar span.orange { background: var(--warning); }
+.count-bar span.purple { background: #9b7bea; }
+.count-bar span.muted { background: var(--text-faint); }
+

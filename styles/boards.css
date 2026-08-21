@@ -1,0 +1,33 @@
+/* -- Quadrant and board views -------------------------------------------- */
+.quadrant-board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.quadrant { min-width: 0; min-height: 290px; display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); transition: border-color .15s ease, background .15s ease; }
+.quadrant.drag-over { border-color: var(--blue); background: var(--blue-soft); }
+.quadrant[data-quadrant="q1"] { border-top: 3px solid var(--pink); }
+.quadrant[data-quadrant="q2"] { border-top: 3px solid var(--blue); }
+.quadrant[data-quadrant="q3"] { border-top: 3px solid var(--warning); }
+.quadrant[data-quadrant="q4"] { border-top: 3px solid var(--text-faint); }
+.quadrant-header { min-height: 58px; padding: 10px 13px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+.quadrant-number { width: 29px; height: 29px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 7px; background: var(--field); color: var(--text-soft); font-size: 11px; font-weight: 800; }
+.quadrant[data-quadrant="q1"] .quadrant-number { background: var(--pink-soft); color: var(--pink-strong); }
+.quadrant[data-quadrant="q2"] .quadrant-number { background: var(--blue-soft); color: var(--blue-strong); }
+.quadrant-title { min-width: 0; flex: 1; }
+.quadrant-title strong { display: block; font-size: 12px; }
+.quadrant-title span { display: block; color: var(--text-faint); font-size: 9px; }
+.quadrant-count { color: var(--text-faint); font-size: 10px; }
+.quadrant-list { min-height: 218px; padding: 8px; flex: 1; }
+.quadrant-task { min-height: 58px; padding: 9px 9px 8px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); cursor: grab; transition: transform .14s ease, box-shadow .14s ease; touch-action: none; }
+.quadrant-task + .quadrant-task { margin-top: 6px; }
+.quadrant-task:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(24, 34, 48, .08); }
+.quadrant-task.dragging { opacity: .4; }
+body.dragging-quadrant-task, body.dragging-quadrant-task * { cursor: grabbing !important; user-select: none !important; }
+.quadrant-task.completed { opacity: .58; }
+.quadrant-task-line { display: flex; align-items: flex-start; gap: 8px; }
+.quadrant-task-title { min-width: 0; flex: 1; overflow: hidden; font-size: 11px; font-weight: 680; text-overflow: ellipsis; white-space: nowrap; cursor: pointer; }
+.quadrant-task-title.q1 { color: var(--pink-strong); }
+.quadrant-task-title.q2 { color: var(--blue-strong); }
+.quadrant-task-title.q3 { color: var(--warning); }
+.quadrant-task-title.q4 { color: var(--text-soft); }
+.quadrant-task.completed .quadrant-task-title { text-decoration: line-through; }
+.quadrant-task-meta { margin: 5px 0 0 29px; color: var(--text-faint); font-size: 9px; }
+.quadrant-empty { min-height: 200px; display: grid; place-items: center; color: var(--text-faint); font-size: 10px; text-align: center; }
+

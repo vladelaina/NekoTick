@@ -1,0 +1,83 @@
+/* -- Responsive layout --------------------------------------------------- */
+@media (max-width: 1020px) {
+  :root { --sidebar-width: 196px; }
+  .view-container { padding-inline: 24px; }
+  .day-layout { grid-template-columns: minmax(0, 1fr) 220px; }
+  .year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .count-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quick-add-options { grid-template-columns: 1fr 1fr 1fr; }
+  .quick-add-notes { grid-column: 1 / -1; }
+}
+
+@media (max-width: 780px) {
+  .app-shell { padding: 0; }
+  .app-frame { border: 0; border-radius: 0; }
+  .sidebar { position: fixed; inset: 0 auto 0 0; width: min(270px, 84vw); transform: translateX(-102%); box-shadow: var(--shadow-float); transition: transform .22s cubic-bezier(.16, 1, .3, 1); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-mask { position: fixed; z-index: 15; inset: 0; display: block; background: rgba(16, 22, 31, .32); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .2s ease, visibility .2s; }
+  .sidebar-mask.open { opacity: 1; visibility: visible; pointer-events: auto; }
+  .topbar { height: 58px; flex-basis: 58px; padding: 0 14px; gap: 9px; }
+  .icon-button.mobile-menu-button { display: grid; }
+  .search-wrap { width: auto; flex: 1; }
+  .view-container { padding: 21px 16px 36px; }
+  .view-header { margin-bottom: 17px; }
+  .view-heading h1 { font-size: 21px; line-height: 28px; }
+  .header-actions .primary-button span { display: none; }
+  .header-actions .primary-button { width: 36px; padding: 0; }
+  .day-layout { grid-template-columns: 1fr; }
+  .unscheduled-panel { width: 100%; }
+  .calendar-cell { min-height: 88px; padding: 5px; }
+  .quadrant-board { grid-template-columns: 1fr; }
+  .quadrant { min-height: 250px; }
+  .count-detail-grid { grid-template-columns: 1fr; }
+  .board-shell { grid-template-columns: repeat(4, 260px); margin-right: -16px; padding-right: 16px; }
+  .board-column { min-width: 260px; height: calc(100vh - 205px); min-height: 420px; }
+}
+
+@media (max-width: 560px) {
+  .view-header { align-items: center; }
+  .view-heading p { display: none; }
+  .quick-add-main { gap: 6px; padding-left: 8px; }
+  .quick-add-main > .icon { display: none; }
+  .quick-add-quadrants { gap: 3px; }
+  .quick-quadrant-choice { width: 21px; }
+  .quick-quadrant-dot { width: 9px; height: 9px; }
+  .quick-add-options { grid-template-columns: 1fr 1fr; }
+  .quick-add-notes { grid-column: 1 / -1; }
+  .calendar-view-toolbar { margin-top: -4px; flex-wrap: wrap; }
+  .calendar-mode-switch { width: 100%; order: 2; }
+  .calendar-mode-switch .segment { min-width: 0; flex: 1; }
+  .calendar-view-toolbar .date-navigator { margin-left: auto; }
+  .toolbar { flex-wrap: wrap; }
+  .toolbar-spacer { display: none; }
+  .segmented { max-width: 100%; flex: 1; }
+  .segment { min-width: 0; padding-inline: 5px; flex: 1; }
+  .sort-menu { min-width: 132px; }
+  .sort-menu-trigger, .sort-menu-option { font-size: 11px; }
+  .task-row { min-height: 64px; padding-inline: 9px; }
+  .task-actions { opacity: 1; }
+  .task-meta .inline-edit-trigger.empty { opacity: .72; }
+  .task-meta { max-width: 75vw; overflow: hidden; }
+  .date-navigator { gap: 4px; }
+  .date-label-button { min-width: 92px; font-size: 12px; }
+  .calendar-shell { margin-inline: -16px; border-right: 0; border-left: 0; border-radius: 0; }
+  .calendar-cell { min-height: 72px; padding: 3px; }
+  .calendar-event { height: 20px; padding-inline: 3px; justify-content: flex-start; font-size: 8px; line-height: 20px; }
+  .calendar-event-label { display: block; }
+  .more-events { font-size: 8px; }
+  .year-grid { grid-template-columns: 1fr; }
+  .year-month { padding: 16px; }
+  .mini-day { font-size: 10px; }
+  .schedule-grid { grid-template-columns: 1fr; gap: 4px; }
+  .modal-mask { padding: 0; align-items: end; }
+  .modal { width: 100%; max-height: 92vh; border-radius: 12px 12px 0 0; animation-name: sheet-in; }
+  .count-overview { grid-template-columns: 1fr 1fr; }
+  .count-card { min-height: 94px; padding: 12px; gap: 8px; }
+  .count-card-icon { width: 31px; height: 31px; }
+  .count-card-copy strong { font-size: 21px; }
+  @keyframes sheet-in { from { transform: translateY(100%); } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
